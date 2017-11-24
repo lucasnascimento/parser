@@ -1,0 +1,8 @@
+spring:
+  main:
+    banner-mode: "off"
+#  jpa.hibernate.ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/parse?&useSSL=false
+    username: root
+    password: root
