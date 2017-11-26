@@ -1,5 +1,6 @@
-package com.ef.parser;
+package com.ef;
 
+import com.ef.parser.DurationEnum;
 import org.junit.Assert;
 import org.junit.Test;
 

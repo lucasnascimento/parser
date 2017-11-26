@@ -1,6 +1,9 @@
-package com.ef.parser;
+package com.ef;
 
 
+import com.ef.parser.BlockedRepository;
+import com.ef.parser.LogRepository;
+import com.ef.parser.LogService;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
