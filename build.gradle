@@ -13,13 +13,8 @@ buildscript {
 apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
-
 group 'com.ef'
-
-apply plugin: 'java'
-
 sourceCompatibility = 1.8
-
 repositories {
     mavenCentral()
 }
@@ -29,11 +24,12 @@ springBoot {
 jar {
     baseName 'parser'
 }
-
 dependencies {
     compile "org.springframework.boot:spring-boot-starter-batch"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "mysql:mysql-connector-java"
     compileOnly 'org.projectlombok:lombok:1.16.16'
     testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile 'com.h2database:h2:1.4.196'
+    testCompile 'org.hibernate:hibernate-java8:5.0.12.Final' //hack to work h2 LocalDateTime in memory database
 }

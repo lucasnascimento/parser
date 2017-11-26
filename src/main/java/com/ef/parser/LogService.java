@@ -11,12 +11,12 @@ import java.util.List;
 public class LogService {
 
     @Autowired
-    BlockedRepository blockedRepository;
+    private BlockedRepository blockedRepository;
 
     @Autowired
-    JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
-    public boolean checkBlockeds(final LocalDateTime startDate, final DurationEnum duration, final Integer threshold) {
+    public boolean checkBlocked(final LocalDateTime startDate, final DurationEnum duration, final Integer threshold) {
         final String sql = "select ip, count(*) from log where date between ? and ? group by ip having count(*) > ?";
         final LocalDateTime endDate = duration.plusDuration(startDate);
         List<Blocked> ipsToBlock = jdbcTemplate.query(sql, new Object[]{startDate, endDate, threshold}, (rs, row) -> {

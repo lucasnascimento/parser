@@ -43,7 +43,7 @@ public class JobCompletionNotificationListener extends JobExecutionListenerSuppo
             log.info("FINISHED! Time to verify the results");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd.HH:mm:ss");
             LocalDateTime startDate = LocalDateTime.parse(startDateString, formatter);
-            logService.checkBlockeds(startDate, duration, threshold);
+            logService.checkBlocked(startDate, duration, threshold);
             long count = blockedRepository.count();
             System.out.println(String.format("Were blocked %s ip at this moment.", count));
             blockedRepository.findAll().forEach(System.out::println);

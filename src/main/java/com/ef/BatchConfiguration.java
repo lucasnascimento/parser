@@ -79,7 +79,6 @@ public class BatchConfiguration {
     public ItemReader<Log> reader() {
         FlatFileItemReader<Log> logFileReader = new FlatFileItemReader<>();
         logFileReader.setResource(new FileSystemResource(accesslog));
-        logFileReader.setLinesToSkip(1);
 
         LineMapper<Log> logLineMapper = createLogLineMapper();
         logFileReader.setLineMapper(logLineMapper);

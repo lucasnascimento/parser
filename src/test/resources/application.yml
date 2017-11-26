@@ -1,0 +1,17 @@
+spring:
+  main:
+    banner-mode: "off"
+  jpa.hibernate.ddl-auto: create
+  datasource:
+    initialize: false
+    url: jdbc:h2:~/test;MODE=MYSQL
+
+
+startDate: 2017-01-01.13:00:00
+duration: hourly
+threshold: 2
+accesslog: src/test/resources/data/access.log
+
+
+
+
