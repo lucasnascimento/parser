@@ -36,5 +36,5 @@ select * from log where ip = '192.168.62.176';
 Improvement's proposal:
 - 
 * Create control of wich file were processed, to improve load performance.
-* Unit test layer
+* ~~Unit test layer~~ - DONE
 * Add relationship between log and blocked to make more easy find why some blocked ip were blocked.
